@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ennis - Physical Inventory</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/scripts.js"></script>
+
+  <!-- PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Enins - Physical Inventory">
+  <meta name="description" content="A tool to perform physical inventories" />
+  <meta name="theme-color" content="#F87676" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="images/icons/icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/icons/icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/icons/icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="images/icons/icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/icon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/icon-32x32.png">
+  <link rel="icon" sizes="128x128" href="images/icons/icon-128x128.png">
+  <link rel="icon" sizes="192x192" href="images/icons/icon-192x192.png">
+
+  <link rel="apple-touch-startup-image" href="images/splash/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="images/splash/splash-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="images/splash/splash-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="images/splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="images/splash/splash-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="images/splash/splash-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="images/splash/splash-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <!-- PWA -->
+</head>
+<body class="debug">
+  <div class="container main">
+    <div class="container material">
+      <select class="weight">
+        <option value="">---</option>
+        <option value='000'></option>
+        <option value='007'>7PT</option>
+        <option value='012'>12#</option>
+        <option value='014'>14#</option>
+        <option value='015'>15#</option>
+        <option value='016'>16#</option>
+        <option value='017'>17#</option>
+        <option value='020'>20#</option>
+        <option value='021'>21#</option>
+        <option value='022'>22#</option>
+        <option value='024'>24#</option>
+        <option value='026'>26#</option>
+        <option value='028'>28#</option>
+        <option value='032'>32#</option>
+        <option value='033'>33#</option>
+        <option value='036'>36#</option>
+        <option value='040'>40#</option>
+        <option value='050'>50#</option>
+        <option value='057'>57#</option>
+        <option value='060'>60#</option>
+        <option value='067'>67#</option>
+        <option value='070'>70#</option>
+        <option value='080'>80#</option>
+        <option value='081'>8PT</option>
+        <option value='100'>100#</option>
+        <option value='105'>105#</option>
+        <option value='125'>125#</option>
+        <option value='150'>150#</option>
+        <option value='400'>2MIL</option>
+        <option value='512'>12.5#</option>
+        <option value='765'>7.65#</option>
+      </select>
+      <select class="grade">
+        <option value="">---</option>
+        <option value='679'>CARBON STD</option>
+        <option value='374'>CARBONIZING BOND</option>
+        <option value='794'>CAROLINA C1S</option>
+        <option value='423'>CB BLK IMG</option>
+        <option value='491'>CB XCL DIGLSR</option>
+        <option value='425'>CF</option>
+        <option value='493'>CF XCL DIGLSR</option>
+        <option value='433'>CFB</option>
+        <option value='492'>CFB XCL DIGLS</option>
+        <option value='453'>DEF BASIC BD</option>
+        <option value='456'>DEF BD BAS PL</option>
+        <option value='457'>DEF CB BAS</option>
+        <option value='459'>DEF DSGN BD</option>
+        <option value='470'>DEF DSGN CB</option>
+        <option value='454'>DEF PREM BD</option>
+        <option value='LCF'>DUCUDOSE PLASTIC</option>
+        <option value='D15'>EARTH TAG</option>
+        <option value='169'>FORM BOND</option>
+        <option value='163'>LAID CLASSIC</option>
+        <option value='301'>LEDGER</option>
+        <option value='377'>MATTE LITHO PERM</option>
+        <option value='378'>MATTE LITHO REM</option>
+        <option value='170'>MOCR BD 50DIA</option>
+        <option value='157'>MOCR BOND</option>
+        <option value='888'>MYLAR</option>
+        <option value='NET'>NETFLIX LSR FORMS BD</option>
+        <option value='296'>OPAQ TRUE OFFSET SMTH</option>
+        <option value='884'>PS TAPE</option>
+        <option value='436'>SC BLK PRT</option>
+        <option value='435'>SCCB BLK</option>
+        <option value='535'>SOMERSET C2S 7PT</option>
+        <option value='617'>SPRG DIG OFF SMTH 50D</option>
+        <option value='316'>SPRGFRG DIG SMTH EGG</option>
+        <option value='31B'>SPRGFRG SMTH OFF 50D</option>
+        <option value='315'>SPRGFRG SMTH OFF EGG</option>
+        <option value='889'>SUPERTAC PS</option>
+        <option value='304'>TABLET</option>
+        <option value='529'>TAGBOARD</option>
+        <option value='705'>TAGBOARD</option>
+        <option value='326'>VELLUM</option>
+      </select>
+      <select class="color">
+        <option value="">---</option>
+        <option value='00'></option>
+        <option value='21'>BLK</option>
+        <option value='01'>BLUE</option>
+        <option value='04'>CANARY</option>
+        <option value='07'>GLDNRD</option>
+        <option value='09'>GREEN</option>
+        <option value='12'>MANILA</option>
+        <option value='17'>PERM</option>
+        <option value='13'>PINK</option>
+        <option value='50'>WHITE</option>
+      </select>
+      <input type="text" class="width" value="" />
+      <input type="text" class="full-item" value="" />
+    </div>
+    <div class="container weights">
+    </div>
+    <div class="container total-weight"><span>0</span></div>
+    <div class="container inputs">
+      <form class="calculator">
+        <input type="text" class="weight" value="" />
+        <input type="text" class="quantity" value="1" />
+        <a href="#" class="button keypad">7</a>
+        <a href="#" class="button keypad">8</a>
+        <a href="#" class="button keypad">9</a>
+        <a href="#" class="button keypad">4</a>
+        <a href="#" class="button keypad">5</a>
+        <a href="#" class="button keypad">6</a>
+        <a href="#" class="button keypad">1</a>
+        <a href="#" class="button keypad">2</a>
+        <a href="#" class="button keypad">3</a>
+        <a href="#" class="button keypad">0</a>
+        <a href="#" class="button delete">&lt;</a>
+        <a href="#" class="button copy">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 24 24"
+          style=" fill:rgba(255,255,255,.3);">    <path d="M 4 2 C 2.895 2 2 2.895 2 4 L 2 17 C 2 17.552 2.448 18 3 18 C 3.552 18 4 17.552 4 17 L 4 4 L 17 4 C 17.552 4 18 3.552 18 3 C 18 2.448 17.552 2 17 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z"></path></svg>
+        </a>
+        <button class="add">+</button>
+      </form>
+    </div>
+  </div>
+  <div class="list-container">
+    <textarea class="list"></textarea>
+    <button class="close">
+      <svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+          <title>X</title>
+          <desc>Created with Sketch.</desc>
+          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+              <g id="button/delete" transform="translate(-454.000000, -12.000000)" stroke="#F87676" stroke-width="3">
+                  <path d="M463.5,21.65625 L455.5,29.65625 L463.5,21.65625 L455.5,13.65625 L463.5,21.65625 Z M463.5,21.65625 L471.5,29.65625 L463.5,21.65625 L471.5,13.65625 L463.5,21.65625 Z" id="X"></path>
+              </g>
+          </g>
+      </svg>
+    </button>
+  </div>
+</body>
+</html>
